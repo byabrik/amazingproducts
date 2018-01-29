@@ -7,9 +7,14 @@ import { AppComponent } from './app.component';
 import { FacebookModule } from 'ngx-facebook';
 import { ProductsComponent } from './products/products.component';
 import { LoginComponent } from './login/login.component';
+import { ErrorComponent } from './error/error.component';
+import { LoginRedirectComponent } from './login/login-redirect.component';
 
 const appRoutes: Routes = [
   { path: 'products', component: ProductsComponent },
+  { path: 'login-redirect', component: LoginRedirectComponent },  
+  { path: 'error', component: ErrorComponent },
+  //error_reason
   { path: '', component: LoginComponent }
 ];
 
@@ -17,7 +22,9 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     ProductsComponent,
-    LoginComponent
+    LoginComponent,
+    ErrorComponent,
+    LoginRedirectComponent
   ],
   imports: [
     BrowserModule,
@@ -31,4 +38,5 @@ const appRoutes: Routes = [
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
 
