@@ -13,10 +13,10 @@ import { OnInit } from "@angular/core/src/metadata/lifecycle_hooks";
 
     ngOnInit(): void {
         this.route.queryParamMap.subscribe((params: ParamMap) => {
-            if(params.get('error') === 'access_denied'){
-                if(params.get('error_reason') === 'user_denied') {
-                    this.router.navigate(['error', {error_reason: 'user_denied'}]);
-                }
+            const errorMessage = params.get('error');
+            const errorReason = params.get('error_reason');
+            if(errorMessage === 'access_denied') {
+                this.router.navigate(['error', {error: errorMessage, error_reason: errorReason}]);
             }
         });
     }

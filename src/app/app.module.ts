@@ -9,12 +9,12 @@ import { ProductsComponent } from './products/products.component';
 import { LoginComponent } from './login/login.component';
 import { ErrorComponent } from './error/error.component';
 import { LoginRedirectComponent } from './login/login-redirect.component';
+import { LoggedInGuardGuard } from './logged-in-guard.guard';
 
 const appRoutes: Routes = [
-  { path: 'products', component: ProductsComponent },
+  { path: 'products', component: ProductsComponent, canActivate: [LoggedInGuardGuard]  },
   { path: 'login-redirect', component: LoginRedirectComponent },  
   { path: 'error', component: ErrorComponent },
-  //error_reason
   { path: '', component: LoginComponent }
 ];
 
@@ -34,7 +34,7 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [],
+  providers: [LoggedInGuardGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

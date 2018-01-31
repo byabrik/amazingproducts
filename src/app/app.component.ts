@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
-import { FacebookService, InitParams, LoginResponse, LoginStatus } from 'ngx-facebook';
+import { FacebookService, InitParams } from 'ngx-facebook';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'app';
-
+export class AppComponent {  
     constructor(private fb: FacebookService) {
       let initParams: InitParams = {
         appId: '272057439991866',
