@@ -14,7 +14,6 @@ export class ErrorComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      console.log(params);
       let error = params['error'] === undefined ? null : params['error'];
       let error_reason = params['error_reason'] || null;
       this.message = error == null ? 'Unable to Process Your Request, Please Try Again Later' : `${error} - ${error_reason}`;

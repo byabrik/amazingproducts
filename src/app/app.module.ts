@@ -14,8 +14,9 @@ import { LoggedInGuardGuard } from './logged-in-guard.guard';
 const appRoutes: Routes = [
   { path: 'products', component: ProductsComponent, canActivate: [LoggedInGuardGuard]  },
   { path: 'login-redirect', component: LoginRedirectComponent },  
+  { path: 'login', component: LoginComponent },
   { path: 'error', component: ErrorComponent },
-  { path: '', component: LoginComponent }
+  { path: '', redirectTo: 'products', pathMatch: 'full' }
 ];
 
 @NgModule({
