@@ -7,6 +7,9 @@ import { FacebookService, InitParams } from 'ngx-facebook';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {  
+
+    public title = "Amazing Products";
+
     constructor(private fb: FacebookService) {
       let initParams: InitParams = {
         appId: '272057439991866',

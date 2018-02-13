@@ -1,0 +1,10 @@
+<h2>All Deals</h2>
+<ul class="deals">
+  <li *ngFor="let deal of deals" (click)="onSelect(deal)" [class.selected]="deal === selectedDeal">
+    Deal id: <span>{{deal.id}}</span>
+    Total available products:<span>{{deal.total_products}}</span>
+    Start time:<span>{{deal.start_datetime}}</span>
+    End time:<span>{{deal.end_datetime}}</span>
+    Product Name:<span>{{deal.product.name}}</span>
+  </li>
+</ul>

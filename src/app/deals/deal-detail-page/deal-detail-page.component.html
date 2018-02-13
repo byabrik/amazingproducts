@@ -1,0 +1,17 @@
+`
+  <h2>Deals</h2>
+  <div *ngIf="deal$">
+    <h3>"{{ deal$.product.name }}"</h3>
+    <div>
+      <label>Id: </label>{{ deal$.id }}</div>
+    <div>
+      <label>Name: </label>
+    </div>
+    <p>
+      <button (click)="backToList(deal$)">Back</button>
+    </p>
+    <div *ngIf="showSubscribeButton">
+      <button (click)="subscribeToDeal(deal$)">Subscribe</button>
+    </div>
+  </div>
+  `
